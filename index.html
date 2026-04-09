@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Aniversário, Prima! ❤️</title>
+    <title>Feliz Aniversário, Prima!</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,10 +54,10 @@
             box-shadow: 0 8px 32px 0 rgba(236, 72, 153, 0.1);
         }
 
-        /* Estilo Polaroid Premium */
+        /* Estilo Polaroid Premium - Ajustado para não cortar fotos */
         .polaroid {
             background: #fff;
-            padding: 12px 12px 40px 12px;
+            padding: 12px 12px 16px 12px; /* Reduzido padding inferior sem legenda */
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -118,22 +118,11 @@
         <div class="bg-shape bg-fuchsia-200 w-64 h-64 top-[40%] left-[20%] animate-pulse-slow"></div>
     </div>
 
-    <!-- Caixa de Aviso (Sem Som) -->
-    <div id="audio-warning" class="hidden fixed top-6 left-1/2 transform -translate-x-1/2 glass-card border-rose-200 text-rose-800 px-6 py-4 rounded-2xl shadow-xl z-50 text-sm md:text-base text-center w-11/12 max-w-md transition-all duration-300">
-        <div class="flex flex-col items-center gap-2">
-            <span class="text-2xl">🎵</span>
-            <p>O teu dispositivo bloqueou o som automático.</p>
-            <p class="font-medium text-rose-600">Clica no botão de som 🔊 para viver a experiência completa!</p>
-            <button id="close-warning" class="mt-2 bg-rose-100 hover:bg-rose-200 text-rose-700 px-6 py-2 rounded-full text-xs font-bold transition shadow-sm">Entendido</button>
-        </div>
-    </div>
-
     <!-- Tela de Entrada -->
     <div id="start-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center transition-all duration-1000 ease-in-out bg-white/40 backdrop-blur-md">
         <div class="glass-card p-10 md:p-14 rounded-3xl shadow-2xl text-center max-w-md w-11/12 transform transition-transform duration-500 hover:scale-[1.02]">
             <div class="text-6xl mb-6 animate-bounce">🎁</div>
-            <h1 class="text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500 font-cursive mb-4 drop-shadow-sm leading-tight">Tenho uma surpresa para ti...</h1>
-            <p class="text-gray-500 mb-8 text-sm md:text-base font-medium">Liga o som e tira do modo silencioso para a experiência completa ✨</p>
+            <h1 class="text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500 font-cursive mb-8 drop-shadow-sm leading-tight">Tenho uma surpresa para ti...</h1>
             
             <button id="start-btn" class="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-4 px-8 font-semibold text-white bg-gradient-to-r from-pink-500 to-rose-400 shadow-xl transition duration-300 ease-out hover:scale-105 active:scale-95 w-full">
                 <span class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
@@ -150,60 +139,43 @@
     <div id="main-content" class="hidden opacity-0 transition-opacity duration-1000 ease-in-out flex-grow flex flex-col items-center py-16 px-4 max-w-6xl mx-auto w-full relative z-10">
         
         <!-- Cabeçalho -->
-        <header class="text-center mb-16 w-full mt-8">
-            <div class="inline-block mb-4 animate-float">👑</div>
+        <header class="text-center mb-12 w-full mt-8">
             <h1 class="text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-500 font-cursive mb-2 pb-2 drop-shadow-sm filter">Feliz Aniversário!</h1>
-            <h2 class="text-3xl md:text-5xl text-rose-400 font-cursive mt-2 opacity-90">Minha Prima Querida ❤️</h2>
+            <h2 class="text-3xl md:text-5xl text-rose-400 font-cursive mt-2 opacity-90">Prima</h2>
         </header>
 
-        <!-- Mensagem de Aniversário -->
-        <div class="reveal glass-card p-8 md:p-12 rounded-3xl mb-24 max-w-3xl text-center relative mx-auto">
-            <div class="absolute -top-5 -left-5 text-4xl opacity-50 transform -rotate-12">✨</div>
-            <div class="absolute -bottom-5 -right-5 text-4xl opacity-50 transform rotate-12">💖</div>
-            
-            <p class="text-lg md:text-2xl leading-relaxed text-gray-700 font-light">
-                Hoje é o teu dia especial! Quero desejar-te toda a felicidade do mundo, muita paz, saúde, amor e sucesso. Que todos os teus sonhos se realizem e que a vida continue a presentear-te com momentos maravilhosos. 
-                <br><br>
-                <span class="font-medium text-pink-600">És uma mulher incrível, linda por dentro e por fora</span>, e tens um lugar gigante no meu coração. Aproveita muito o teu dia, tu mereces o melhor!
+        <!-- Mensagem de Aniversário Simples -->
+        <div class="reveal glass-card p-8 md:p-12 rounded-3xl mb-24 max-w-2xl text-center relative mx-auto">
+            <p class="text-lg md:text-xl leading-relaxed text-gray-700 font-medium">
+                Feliz aniversário! Desejo que o teu dia seja excelente e repleto de coisas boas. Muita saúde, paz e sucesso. Parabéns!
             </p>
         </div>
 
-        <!-- Título da Galeria -->
-        <div class="reveal text-center mb-12">
-            <h3 class="text-4xl font-cursive text-pink-500">Momentos Inesquecíveis</h3>
-            <div class="w-24 h-1 bg-gradient-to-r from-transparent via-pink-300 to-transparent mx-auto mt-4"></div>
-        </div>
-
-        <!-- Galeria de Fotos (Polaroids) -->
-        <!-- NOTA: Troca os links de imagens do Unsplash pelas tuas fotos originais (ex: img/foto1.jpeg) -->
+        <!-- Galeria de Fotos (Polaroids - sem cortar e sem legendas) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 w-full mb-24 px-4 md:px-0">
             
             <div class="reveal polaroid transform rotate-3">
-                <div class="overflow-hidden bg-gray-100 h-64 md:h-72 w-full relative group">
-                    <img src="img/foto1.jpeg" alt="Foto Prima 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="overflow-hidden bg-gray-100 w-full relative group">
+                    <img src="img/foto1.jpeg" alt="Foto Prima 1" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
                 </div>
-                <p class="font-cursive text-center mt-4 text-2xl text-gray-600">Sempre juntas!</p>
             </div>
 
             <div class="reveal polaroid transform -rotate-2 sm:mt-12">
-                <div class="overflow-hidden bg-gray-100 h-64 md:h-72 w-full relative group">
-                    <img src="img/foto2.jpeg" alt="Foto Prima 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0">
+                <div class="overflow-hidden bg-gray-100 w-full relative group">
+                    <img src="img/foto2.jpeg" alt="Foto Prima 2" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0">
                 </div>
-                <p class="font-cursive text-center mt-4 text-2xl text-gray-600">Sorrisos ✨</p>
             </div>
 
             <div class="reveal polaroid transform rotate-2 lg:mt-6">
-                <div class="overflow-hidden bg-gray-100 h-64 md:h-72 w-full relative group">
-                    <img src="img/foto3.jpeg" alt="Foto Prima 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="overflow-hidden bg-gray-100 w-full relative group">
+                    <img src="img/foto3.jpeg" alt="Foto Prima 3" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
                 </div>
-                <p class="font-cursive text-center mt-4 text-2xl text-gray-600">Aventuras...</p>
             </div>
 
             <div class="reveal polaroid transform -rotate-3 sm:mt-12 lg:mt-16">
-                <div class="overflow-hidden bg-gray-100 h-64 md:h-72 w-full relative group">
-                    <img src="img/foto4.jpeg" alt="Foto Prima 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="overflow-hidden bg-gray-100 w-full relative group">
+                    <img src="img/foto4.jpeg" alt="Foto Prima 4" class="w-full h-auto block transition-transform duration-700 group-hover:scale-105">
                 </div>
-                <p class="font-cursive text-center mt-4 text-2xl text-gray-600">Parabéns! 🥂</p>
             </div>
 
         </div>
@@ -216,31 +188,32 @@
 
     </div>
 
-    <!-- Botão de Controlo de Som Flutuante -->
-   <button id="audio-toggle" class="hidden fixed bottom-6 right-6 bg-white/80 backdrop-blur-md border border-pink-200 text-pink-500 hover:bg-pink-50 hover:text-pink-600 h-14 w-14 rounded-full shadow-2xl z-50 transition-all duration-300 transform hover:scale-110 text-2xl flex items-center justify-center">
-        🔇
-    </button>
-
-    <!-- Áudio de Fundo -->
-    <audio id="bday-music" loop>
-        <source src="https://files.catbox.moe/onpmtv.mp3" type="audio/mpeg">
-    </audio>
-
     <script>
         const startScreen = document.getElementById('start-screen');
         const mainContent = document.getElementById('main-content');
         const startBtn = document.getElementById('start-btn');
-        const music = document.getElementById('bday-music');
         const confettiBtn = document.getElementById('more-confetti');
-        const audioToggle = document.getElementById('audio-toggle');
-        const audioWarning = document.getElementById('audio-warning');
-        const closeWarningBtn = document.getElementById('close-warning');
         
-        let isMusicPlaying = false;
+        // Lógica de Entrada no Site
+        startBtn.addEventListener('click', () => {
+            startScreen.classList.add('opacity-0', 'scale-110');
+            
+            setTimeout(() => {
+                startScreen.style.display = 'none';
+                mainContent.classList.remove('hidden');
+                
+                // Forçar um pequeno delay para a animação de entrada funcionar fluida
+                setTimeout(() => {
+                    mainContent.classList.remove('opacity-0');
+                    startCelebration();
+                    initScrollAnimations();
+                }, 100);
+            }, 800);
+        });
 
-        // Configuração de Confetes Mágicos
+        // Configuração de Confetes Mágicos ao abrir
         function startCelebration() {
-            var duration = 5000;
+            var duration = 3000;
             var animationEnd = Date.now() + duration;
             var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -261,65 +234,6 @@
                 confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }, colors: ['#fce7f3', '#fbcfe8', '#f472b6', '#ec4899', '#db2777'] }));
             }, 250);
         }
-
-        // Tentar tocar a música
-        function attemptPlayMusic() {
-            music.volume = 0.4; // Um pouco mais suave
-            let playPromise = music.play();
-
-            if (playPromise !== undefined) {
-                playPromise.then(_ => {
-                    isMusicPlaying = true;
-                    audioToggle.innerHTML = '🔊';
-                    audioWarning.classList.add('hidden');
-                })
-                .catch(error => {
-                    console.log("Reprodução automática bloqueada.", error);
-                    isMusicPlaying = false;
-                    audioToggle.innerHTML = '🔇';
-                    audioWarning.classList.remove('hidden');
-                });
-            }
-        }
-
-        // Controlos de Áudio
-        audioToggle.addEventListener('click', () => {
-            if (isMusicPlaying) {
-                music.pause();
-                audioToggle.innerHTML = '🔇';
-                isMusicPlaying = false;
-            } else {
-                music.play();
-                audioToggle.innerHTML = '🔊';
-                isMusicPlaying = true;
-                audioWarning.classList.add('hidden');
-            }
-        });
-
-        closeWarningBtn.addEventListener('click', () => {
-            audioWarning.classList.add('opacity-0');
-            setTimeout(() => audioWarning.classList.add('hidden'), 300);
-        });
-
-        // Lógica de Entrada no Site
-        startBtn.addEventListener('click', () => {
-            attemptPlayMusic(); 
-            
-            startScreen.classList.add('opacity-0', 'scale-110');
-            
-            setTimeout(() => {
-                startScreen.style.display = 'none';
-                mainContent.classList.remove('hidden');
-                audioToggle.classList.remove('hidden');
-                
-                // Forçar um pequeno delay para a animação de entrada funcionar fluida
-                setTimeout(() => {
-                    mainContent.classList.remove('opacity-0');
-                    startCelebration();
-                    initScrollAnimations(); // Inicia o observer apenas quando o site abre
-                }, 100);
-            }, 800);
-        });
 
         // Confetes no Botão
         confettiBtn.addEventListener('click', () => {
@@ -359,7 +273,7 @@
                     }
                 });
             }, {
-                threshold: 0.15 // Dispara quando 15% do elemento estiver visível
+                threshold: 0.15
             });
 
             reveals.forEach(reveal => {
